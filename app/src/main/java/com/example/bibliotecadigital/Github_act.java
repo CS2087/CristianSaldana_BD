@@ -25,8 +25,8 @@ public class Github_act extends AppCompatActivity {
         spin = (Spinner)findViewById(R.id.spbooks);
         text = (TextView)findViewById(R.id.tv);
         final Precio Prec = new Precio();
-
-        String[] books = {"Farenheith", "Revival", "El Alquimista"};
+                                                        //agrgeo los dos libros que faltaban poder y despertar
+        String[] books = {"Farenheith", "Revival", "El Alquimista", "El Poder", "Despertar"};
 
         spin.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, books));
 
@@ -42,6 +42,15 @@ public class Github_act extends AppCompatActivity {
                 if (spin.getSelectedItem().toString().equals("El Alquimista")){
                     text.setText("El precio de " + spin.getSelectedItem().toString() + " es: " + Prec.getElAlquimista());
                 }
+
+                //Libros agregados
+                if (spin.getSelectedItem().toString().equals("El Poder")){
+                    text.setText("El precio de " + spin.getSelectedItem().toString() + " es: " + Prec.getElPoder());
+                }
+                if (spin.getSelectedItem().toString().equals("Despertar")){
+                    text.setText("El precio de " + spin.getSelectedItem().toString() + " es: " + Prec.getDespertar());
+                }
+
             }
 
             @Override
